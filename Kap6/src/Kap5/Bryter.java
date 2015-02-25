@@ -14,6 +14,12 @@ public class Bryter {
     double vekt;
     boolean mann;
 
+    public Bryter(int nr, String navn, double vekt, boolean mann) {
+        this.nr = nr;
+        this.navn = navn;
+        this.vekt = vekt;
+        this.mann = mann;
+    }
     
     @Override
     public int hashCode() {
