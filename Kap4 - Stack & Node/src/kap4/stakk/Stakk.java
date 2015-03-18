@@ -49,7 +49,7 @@ public class Stakk <Type>{
         return SlettDenne;
     }
     
-    // Vector, ALDRI hørt om i timen... FORELES I DET VI SKAL HA DA IDIOTLÆRERE..!
+    // Vector, ALDRI hørt om i timen... UNDERVIS I DET VI SKAL HA DA IDIOTLÆRERE..!
     Vector<Type>alle() {
         Vector<Type> tmp = new Vector<>();
         Node cursor = første;
