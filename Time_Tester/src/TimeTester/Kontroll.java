@@ -3,6 +3,7 @@ package TimeTester;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.Arrays;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Kontroll {
     }
     private ArrayList<Person> PersonArrayList = new ArrayList<Person>();
     private Stack PersonStack = new Stack();
-    private Person[] PersonArray = new Person[100000]; // Hvordan legge til i Array: PersonArray[i]=navn;
+    private Person[] PersonArray = new Person[10000000]; // Hvordan legge til i Array: PersonArray[i]=navn;
     private LinkedList<Person> PersonLinkedList = new LinkedList<Person>();
     
     public void lagArrayList(String navn) {
@@ -25,7 +26,7 @@ public class Kontroll {
     
     // Lager Stack - returnerer ingenting
     public void lagStack(String navn) {
-        PersonStack.push(navn);
+        PersonStack.push(new Person(navn));
     }
     
     public void lagArray(String navn, int i) {
@@ -34,5 +35,12 @@ public class Kontroll {
     
     public void lagLinkedList(String navn) {
         PersonLinkedList.add(new Person(navn));
+    }
+    
+    public void tømAlleLister() {
+        PersonArrayList.clear();
+        Arrays.fill(PersonArray, null);
+        PersonStack.removeAllElements();
+        PersonLinkedList.clear();
     }
 }

@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author Christian
  */
 public class Time_Tester extends javax.swing.JFrame {
+    double totalsum = 0;
 
     /**
      * Creates new form Time_Tester
@@ -31,8 +32,6 @@ public class Time_Tester extends javax.swing.JFrame {
         btnTest = new javax.swing.JButton();
         lblTid = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtOutput = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         lblAL = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,6 +40,15 @@ public class Time_Tester extends javax.swing.JFrame {
         lblLL = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lblStack = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        snittAL = new javax.swing.JLabel();
+        snittA = new javax.swing.JLabel();
+        snittLL = new javax.swing.JLabel();
+        snittStack = new javax.swing.JLabel();
+        lblVenter = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        lblAnt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,116 +61,152 @@ public class Time_Tester extends javax.swing.JFrame {
 
         jLabel2.setText("Tidene ble:");
 
-        txtOutput.setColumns(20);
-        txtOutput.setRows(5);
-        jScrollPane1.setViewportView(txtOutput);
-
         jLabel1.setText("ArrayList:");
 
-        lblAL.setText("jLabel3");
+        lblAL.setText("-");
 
         jLabel3.setText("Array:");
 
-        lblA.setText("jLabel4");
+        lblA.setText("-");
 
         jLabel4.setText("LinkedList:");
 
-        lblLL.setText("jLabel5");
+        lblLL.setText("-");
 
         jLabel5.setText("Stack:");
 
-        lblStack.setText("jLabel6");
+        lblStack.setText("-");
+
+        jLabel6.setText("Snitt:");
+
+        snittAL.setText("-");
+
+        snittA.setText("-");
+
+        snittLL.setText("-");
+
+        snittStack.setText("-");
+
+        lblVenter.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
+        lblVenter.setText("-");
+
+        btnReset.setText("Reset");
+
+        jLabel7.setText("Antall klikk:");
+
+        lblAnt.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(lblTid)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
+                        .addComponent(lblVenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAnt)
+                        .addGap(39, 39, 39))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(lblTid)
-                            .addComponent(lblAL)
-                            .addComponent(lblA))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(btnTest, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(lblAL))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel3))
+                                        .addGap(24, 24, 24)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblA)
+                                            .addComponent(lblStack)
+                                            .addComponent(lblLL))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(snittAL)
+                                    .addComponent(snittA)
+                                    .addComponent(snittLL)
+                                    .addComponent(snittStack))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnReset)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnTest, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblStack)
-                            .addComponent(lblLL))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(btnTest)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTid)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel2)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTest)
+                    .addComponent(btnReset))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(lblAL))
+                    .addComponent(lblAL)
+                    .addComponent(snittAL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(lblA))
+                    .addComponent(lblA)
+                    .addComponent(snittA))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(lblLL))
+                    .addComponent(lblLL)
+                    .addComponent(snittLL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(lblStack))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStack)
+                    .addComponent(snittStack))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTid)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVenter)
+                    .addComponent(jLabel7)
+                    .addComponent(lblAnt))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /*
+    ========================================================
+    == Her begynner koden skrevet av meg
+    ========================================================
+    */
+    
     private void btnTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestActionPerformed
-        // TODO add your handling code here:
-       /* String newline = "\n";
-        String ut = "";
-        
-        long start = System.nanoTime();
-        for(int i = 0; i < 1000; i++) {            
-            Person nyPerson;
-            nyPerson = new Person("per");
-            ut += nyPerson.toString() + "\n";
-        }
-        long stop = System.nanoTime();
-        double totaltid = stop - start;
-        double resultat = totaltid/1000000000;
-        String output = String.valueOf(resultat);
-        lblTid.setText(output);
-        txtOutput.setText(ut);
-        */
+        lblVenter.setText("Legger inn lister, vennligst vent...");
+        int ant = 1000000;
+        int teller = Integer.parseInt(lblAnt.getText());
+        teller += 1;
+        lblAnt.setText(Integer.toString(teller));
         
         // Lag en ArrayList
         long startAL = System.nanoTime();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < ant; i++) {
             Kontroll.kontroll.lagArrayList("per");
         }
         long stopAL = System.nanoTime();
@@ -171,9 +215,23 @@ public class Time_Tester extends javax.swing.JFrame {
         String outputAL = String.valueOf(resultatAL);
         lblAL.setText(outputAL);
         
+        // Snitt
+        totalsum +=   resultatAL;
+        double snitt = totalsum/teller;
+        String utdata = Double.toString(snitt);
+        
+        //double snittet = Integer.parseInt(snittAL.getText());
+        //snittet +=siste;
+        //String snittSomSkalUt = Double.toString(snittet);
+        snittAL.setText(utdata.substring(0, 5));
+        
+       
+        
+        
+        
         // Lag en Array
         long startA = System.nanoTime();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < ant; i++) {
             Kontroll.kontroll.lagArray("per", i);
         }
         long stopA = System.nanoTime();
@@ -184,7 +242,7 @@ public class Time_Tester extends javax.swing.JFrame {
         
         // Lag en LinkedList
         long startLL = System.nanoTime();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < ant; i++) {
             Kontroll.kontroll.lagLinkedList("per");
         }
         long stopLL = System.nanoTime();
@@ -195,7 +253,7 @@ public class Time_Tester extends javax.swing.JFrame {
         
         // Lag en Stack
         long startS = System.nanoTime();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < ant; i++) {
             Kontroll.kontroll.lagStack("per");
         }
         long stopS = System.nanoTime();
@@ -203,6 +261,10 @@ public class Time_Tester extends javax.swing.JFrame {
         double resultatS = totaltidS/1000000000;
         String outputS = String.valueOf(resultatS);
         lblStack.setText(outputS);
+        
+        lblVenter.setText("Klar");
+        // tømer alle lister når vi er ferdige
+        Kontroll.kontroll.tømAlleLister();
     }//GEN-LAST:event_btnTestActionPerformed
 
     /**
@@ -241,18 +303,25 @@ public class Time_Tester extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblA;
     private javax.swing.JLabel lblAL;
+    private javax.swing.JLabel lblAnt;
     private javax.swing.JLabel lblLL;
     private javax.swing.JLabel lblStack;
     private javax.swing.JLabel lblTid;
-    private javax.swing.JTextArea txtOutput;
+    private javax.swing.JLabel lblVenter;
+    private javax.swing.JLabel snittA;
+    private javax.swing.JLabel snittAL;
+    private javax.swing.JLabel snittLL;
+    private javax.swing.JLabel snittStack;
     // End of variables declaration//GEN-END:variables
 }
