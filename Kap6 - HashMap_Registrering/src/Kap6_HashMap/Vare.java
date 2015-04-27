@@ -9,7 +9,7 @@ public class Vare {
     private int beholdning;
     
     // Construckta
-    public Vare(int varenr, String varenavn, int beholdning) {
+    public Vare(int varenr, String varenavn) {
         this.varenr = varenr;
         this.varenavn = varenavn;
         this.beholdning = 0;
