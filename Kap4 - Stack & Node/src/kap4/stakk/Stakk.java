@@ -13,11 +13,11 @@ public class Stakk <Type>{
     // En indre klasse (node)
     private class Node<Type> {
         private Node<Type> neste = null;
-        private Type objekt;
+        private final Type tallerken;
         
         // Contstrukta
-        private Node(Type objekt, Node<Type> neste) {
-            this.objekt = objekt;
+        private Node(Type tellerken, Node<Type> neste) {
+            this.tallerken = tellerken;
             this.neste = neste;
         }
     } // Node-klasse ferdig
@@ -28,15 +28,15 @@ public class Stakk <Type>{
     public Stakk(){}
     
     //Her legger vi til nytt objekt i Stack'en
-    public void push(Type objekt) {
-        Node<Type> nyNode = new Node(objekt, første);
+    public void push(Type tallerken) {
+        Node<Type> nyNode = new Node(tallerken, første);
         første = nyNode;
     }
     
     // Viser øverste element i stack, uten å fjerne den - Helt ukjent syntaks... say what
     public Type peep() {
         // Ren copy/paste, hva er ? her??
-        return (første==null?null:første.objekt);
+        return (første==null?null:første.tallerken);
     }
     
     // Henter og fjerner første element i Stack'en
@@ -44,7 +44,7 @@ public class Stakk <Type>{
         if(første==null) {
             return null; // Stack'en er tom
         }
-        Type SlettDenne = første.objekt;
+        Type SlettDenne = første.tallerken;
         første = første.neste;
         return SlettDenne;
     }
@@ -54,7 +54,7 @@ public class Stakk <Type>{
         Vector<Type> tmp = new Vector<>();
         Node cursor = første;
         while(cursor!=null) {
-            tmp.add((Type)cursor.objekt); // og dette må konverteres?? makan
+            tmp.add((Type)cursor.tallerken); // og dette må konverteres?? makan
             cursor=cursor.neste;
         }
         return tmp;
