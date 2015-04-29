@@ -56,21 +56,22 @@ public class frmDerby extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         cmbMnd = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
-        cmbYear = new javax.swing.JComboBox();
+        cmdYear = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtPlassering = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnRegRace = new javax.swing.JButton();
         cmbDistanse = new javax.swing.JComboBox();
+        txtID = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnAlleHester = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnHorseShort = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnSjekk.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        btnSjekk.setText("Sjekk Connection");
+        btnSjekk.setText("Create Connection");
         btnSjekk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSjekkActionPerformed(evt);
@@ -188,13 +189,13 @@ public class frmDerby extends javax.swing.JFrame {
         jTabbedPane5.addTab("Registrer hest", jPanel1);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel4.setText("Dato:");
+        jLabel4.setText("Hest-ID:");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setText("Dag:");
 
         cmbDag.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        cmbDag.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cmbDag.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel6.setText("Måned:");
@@ -205,8 +206,8 @@ public class frmDerby extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel7.setText("År:");
 
-        cmbYear.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        cmbYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017" }));
+        cmdYear.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        cmdYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017" }));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel8.setText("Distanse:");
@@ -216,11 +217,18 @@ public class frmDerby extends javax.swing.JFrame {
 
         txtPlassering.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jButton2.setText("Registrer");
+        btnRegRace.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        btnRegRace.setText("Registrer");
+        btnRegRace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegRaceActionPerformed(evt);
+            }
+        });
 
         cmbDistanse.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         cmbDistanse.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kort", "Middels", "Lang" }));
+
+        txtID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -229,24 +237,21 @@ public class frmDerby extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegRace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmbDag, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel6)))
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbDag, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel6)
                                 .addGap(6, 6, 6)
                                 .addComponent(cmbMnd, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cmdYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -254,22 +259,28 @@ public class frmDerby extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cmbDistanse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPlassering, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtPlassering, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 45, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(82, 82, 82)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(cmbDag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmdYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbMnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,8 +291,8 @@ public class frmDerby extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(txtPlassering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(104, 104, 104)
-                .addComponent(jButton2)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addComponent(btnRegRace)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Registrer løpsresultat", jPanel2);
@@ -297,8 +308,13 @@ public class frmDerby extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jButton3.setText("Hester vs ant løp");
 
-        jButton4.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jButton4.setText("Hester fra kort løp");
+        btnHorseShort.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        btnHorseShort.setText("Hester fra kort løp");
+        btnHorseShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHorseShortActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -309,7 +325,7 @@ public class frmDerby extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAlleHester, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
+                    .addComponent(btnHorseShort, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -320,7 +336,7 @@ public class frmDerby extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnHorseShort)
                 .addContainerGap(315, Short.MAX_VALUE))
         );
 
@@ -386,8 +402,31 @@ public class frmDerby extends javax.swing.JFrame {
         setning.execute(createString);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog
-                    (null, ex.getClass() + "\n" + ex.getMessage() + " FUCK OFF");            
+                    (null, ex.getClass() + "\n" + ex.getMessage() + "\n" + " Kunne ikke lage Heste-tabell");            
         }
+        
+        
+        
+        // Lage løps-tabell
+        try {
+        String dropString = "drop table lop";
+        String createString = "create table lop"
+            + "("
+            + "regnr int,"
+            + "dato varchar(30),"
+            + "distanse varchar(30),"
+            + "plassering int,"
+            + "CONSTRAINT pk_lop PRIMARY KEY (regnr,dato)"
+            + ")";      
+        setning = conn.createStatement();
+        setning.execute(dropString);
+        setning.execute(createString);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog
+                    (null, ex.getClass() + "\n" + ex.getMessage() + "\n" + " Kunne ikke lage løps-tabell");            
+        }
+        
+        
         
         
          /*
@@ -502,7 +541,7 @@ public class frmDerby extends javax.swing.JFrame {
     
     
     
-    
+    // Vis alle hester
     private void btnAlleHesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlleHesterActionPerformed
          // Info om $db
         String url = "jdbc:derby:travhester;create=true"; // Selve basen
@@ -549,6 +588,114 @@ public class frmDerby extends javax.swing.JFrame {
         } catch (SQLException ex) { JOptionPane.showMessageDialog(rootPane, ex.getClass() + "\n" + ex.getMessage());}
      
     }//GEN-LAST:event_btnAlleHesterActionPerformed
+
+    
+    
+    
+    
+    // Reg LØP
+    private void btnRegRaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegRaceActionPerformed
+        String url = "jdbc:derby:travhester;create=true"; // Selve basen
+        String bruker = "Christian";
+        String passord = "passord";
+        Connection conn = null;
+        Statement setning;
+        ResultSet resultat;
+        
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException ex) {
+            Logger.getLogger(frmDerby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        // Legg inn i tabell
+        try {
+            int id = parseInt(txtID.getText());
+            String dag = cmbDag.getSelectedItem().toString();
+            String mnd = cmbMnd.getSelectedItem().toString();
+            String year = cmdYear.getSelectedItem().toString();
+            String dato = dag + "/" + mnd + "/" + year;
+            // Hva er riktig, Item vs Index ? toString vs Integer.toString
+            String distanse = cmbDistanse.getSelectedItem().toString();
+            int plassering = parseInt(txtPlassering.getText());
+            String insertString = "insert into lop values"
+                    + "(" + id + ", '" + dato + "', '" + distanse + "', " + plassering + ")";
+            setning = conn.createStatement();
+            setning.execute(insertString);  
+            txtID.setText(null);
+            cmbDag.setSelectedIndex(0);
+            cmbMnd.setSelectedIndex(0);
+            cmdYear.setSelectedIndex(0);
+            cmbDistanse.setSelectedIndex(0);
+            txtPlassering.setText(null);
+        }
+        catch (Exception ex) {
+            JOptionPane.showMessageDialog
+                    (rootPane, ex.getClass() + "\n" + ex.getMessage()+ "\n" + "Insert into lop fungerte ikke");             
+        }
+        
+        /* Lukk forbindelsen */
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException ex) { JOptionPane.showMessageDialog(rootPane, ex.getClass() + "\n" + ex.getMessage());}
+        
+    }//GEN-LAST:event_btnRegRaceActionPerformed
+
+    
+    
+    
+    
+    
+    // Rapport - Alle hester fra kort løp
+    private void btnHorseShortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHorseShortActionPerformed
+        String url = "jdbc:derby:travhester;create=true"; // Selve basen
+        String bruker = "Christian";
+        String passord = "passord";
+        Connection conn = null;
+        Statement setning;
+        ResultSet resultat;
+        
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException ex) {
+            Logger.getLogger(frmDerby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        // Bygger opp en meldingsboks
+        try {
+            StringBuilder ut = new StringBuilder();
+            setning = conn.createStatement();
+            resultat = setning.executeQuery
+                    ("select * from lop where distanse = 'Kort' order by regnr");
+            for (int i=1;i<=resultat.getMetaData().getColumnCount();i++){
+                ut.append(resultat.getMetaData().getColumnLabel(i)).append(" ");
+            }
+            //Vis alle dataene
+            ut.append("\n");
+            while (resultat.next()) {
+                ut.append(Integer.toString(resultat.getInt("regnr"))).append(" ");
+                ut.append(resultat.getString("dato")).append(" ");
+                ut.append(resultat.getString("distanse")).append(" ");
+                ut.append(resultat.getString("plassering")).append(" ");
+                ut.append("\n");
+            }
+            JOptionPane.showMessageDialog(rootPane, ut.toString());
+        } catch (SQLException | HeadlessException ex) {
+            JOptionPane.showMessageDialog
+                    (rootPane, ex.getClass() + "\n" + ex.getMessage());
+        }
+        
+        /* Lukk forbindelsen */
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException ex) { JOptionPane.showMessageDialog(rootPane, ex.getClass() + "\n" + ex.getMessage());}
+     
+    }//GEN-LAST:event_btnHorseShortActionPerformed
 
     
     
@@ -605,15 +752,15 @@ public class frmDerby extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlleHester;
+    private javax.swing.JButton btnHorseShort;
     private javax.swing.JButton btnRegHest;
+    private javax.swing.JButton btnRegRace;
     private javax.swing.JButton btnSjekk;
     private javax.swing.JComboBox cmbDag;
     private javax.swing.JComboBox cmbDistanse;
     private javax.swing.JComboBox cmbMnd;
-    private javax.swing.JComboBox cmbYear;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox cmdYear;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -632,6 +779,7 @@ public class frmDerby extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtKald;
     private javax.swing.JRadioButton rbtVarm;
     private javax.swing.JTextField txtEier;
+    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNavn;
     private javax.swing.JTextField txtPlassering;
     private javax.swing.JTextField txtRegnr;
